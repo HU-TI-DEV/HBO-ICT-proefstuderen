@@ -16,7 +16,6 @@ global button_pressed
 button_pressed = False
 
 def button_reader_thread(): 
-    global button_pressed 
     while True:
         if button.value() == 1:
             print("button pressed")
@@ -32,8 +31,7 @@ while True:
             utime.sleep(0.2) 
             buzzer.value(0) 
             utime.sleep(0.2) 
-        global button_pressed 
-        button_pressed = False 
+        button_pressed = False
     led_red.value(1) 
     utime.sleep(5) 
     led_orange.value(1) 
