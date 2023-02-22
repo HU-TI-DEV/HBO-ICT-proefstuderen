@@ -1,6 +1,6 @@
 # HBO-ICT-proefstuderen: Traffic Light Example with the Raspberry Pi Pico
 # Based on https://www.waveshare.com/wiki/Template:Raspberry_Pi_Pico_Example#Traffic_Light_System_Testing
-# Changes 2023 by noharm, hagen-git
+# Changes 2023 by n0harm, hagen-git
 
 from machine import Pin
 from time import sleep_ms
@@ -38,6 +38,8 @@ def setup():
         led_green.value(i & 1)
         led_orange.value(i & 1)
         sleep_ms(200)
+    # initial setup turn LED red on
+    led_red.value(1)
     return
 
 
@@ -57,6 +59,7 @@ def loop():
         led_orange.value(1)
         sleep_ms(5000)
         led_orange.value(0)
+        led_red.value(1)
     # else: (otherwise) we do nothing
     return
 
