@@ -11,9 +11,6 @@ led_orange = Pin(14, Pin.OUT)
 led_green = Pin(13, Pin.OUT)
 buzzer = Pin(12, Pin.OUT)
 
-global button_pressed
-button_pressed = False
-
 
 def beep_ten_times():
     for i in range(10):
